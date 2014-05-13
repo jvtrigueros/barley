@@ -148,35 +148,35 @@ h1 {
   line-height: 1.313em;
   font-weight: 400;
   font-size: 3em;
-  margin: 0.563em 0 0.18766666666666665em;
+  margin: 0.563em 0 0.18766667em;
 }
 h2 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 2.25em;
-  margin: 0.625em 0 0.20833333333333334em;
+  margin: 0.625em 0 0.20833333em;
 }
 h3 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.5em;
-  margin: 1.313em 0 0.43766666666666665em;
+  margin: 1.313em 0 0.43766667em;
 }
 h4 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.313em;
-  margin: 1.313em 0 0.43766666666666665em;
+  margin: 1.313em 0 0.43766667em;
 }
 h5 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.125em;
-  margin: 1.313em 0 0.43766666666666665em;
+  margin: 1.313em 0 0.43766667em;
 }
 h6 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -224,7 +224,7 @@ h1.posttitle_magnum a:focus {
 h1.blogtitle_magnum a {
   background-color: #42d386;
   color: white;
-  padding: 0.26966666666666667em;
+  padding: 0.26966667em;
 }
 h1.blogtitle_magnum,
 h1.blogtitle_magnum a {
@@ -291,9 +291,9 @@ input[type="text"] {
   width: 100%;
 }
 .header_magnum {
-  border-top: 0.5778571428571428em solid #42d386;
+  border-top: 0.57785714em solid #42d386;
   text-align: center;
-  padding: 2.6966666666666668em;
+  padding: 2.69666667em;
   margin-bottom: 2.0225em;
   background-size: cover;
   background-position: center center;
@@ -310,12 +310,12 @@ input[type="text"] {
 }
 .wrapper_magnum {
   width: 100%;
-  max-width: 59.379999999999995em;
+  max-width: 59.38em;
   margin: 0 auto;
 }
 .article_magnum {
   background: white;
-  padding: 2.6966666666666668em 8.09em;
+  padding: 2.69666667em 8.09em;
   margin-bottom: 2.0225em;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
@@ -330,7 +330,7 @@ input[type="text"] {
   color: #333333;
 }
 .readmore_magnum {
-  margin-top: 2.6966666666666668em;
+  margin-top: 2.69666667em;
   text-align: right;
 }
 .article_magnum a.btn,
@@ -369,14 +369,17 @@ a.btn.icon-facebook {
 a.btn.icon-gplus {
   background-color: #D44837;
 }
+.postcontent_magnum p {
+  margin: .8rem 0;
+}
 .article_meta_magnum {
   border-top: 1px solid #e5e5e5;
-  padding-top: 1.3483333333333334em;
-  margin-top: 2.6966666666666668em;
+  padding-top: 1.34833333em;
+  margin-top: 2.69666667em;
   font-size: 0.809em;
 }
 .pagination_magnum {
-  padding: 2.6966666666666668em 8.09em;
+  padding: 2.69666667em 8.09em;
   margin-bottom: 2.0225em;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
@@ -417,15 +420,15 @@ a.btn.icon-gplus {
 }
 .footer_magnum {
   background-color: white;
-  border-top: 0.5778571428571428em solid #42d386;
+  border-top: 0.57785714em solid #42d386;
   text-align: center;
-  padding: 2.6966666666666668em;
+  padding: 2.69666667em;
   margin-bottom: 2.0225em;
   background-size: cover;
   background-position: center center;
   margin-bottom: 0px;
   border-top: 0px solid transparent;
-  border-bottom: 0.5778571428571428em solid #42d386;
+  border-bottom: 0.57785714em solid #42d386;
 }
 .footer_magnum h1 {
   margin: 0;
@@ -438,7 +441,7 @@ a.btn.icon-gplus {
   display: inline-block;
 }
 footer a.subscribe_magnum {
-  margin-bottom: 1.3483333333333334em;
+  margin-bottom: 1.34833333em;
   display: inline-block;
 }
 .share_magnum {
@@ -446,8 +449,8 @@ footer a.subscribe_magnum {
   margin-bottom: 1em;
 }
 .postauther_magnum {
-  padding-top: 1.3483333333333334em;
-  margin-top: 2.6966666666666668em;
+  padding-top: 1.34833333em;
+  margin-top: 2.69666667em;
   border-top: 1px solid #e5e5e5;
 }
 .authorimage_magnum {
@@ -465,12 +468,17 @@ footer a.subscribe_magnum {
 .footertext_magnum {
   font-size: 0.809em;
 }
+.fb-comments,
+.fb-comments > span,
+.fb-comments > span > iframe[style] {
+  width: 100% !important;
+}
 @media (max-width: 52.0625em) {
   .wrapper_magnum {
     overflow: hidden;
   }
   .article_magnum {
-    padding: 0 6.4719999999999995em 6.4719999999999995em 6.4719999999999995em;
+    padding: 0 6.472em 6.472em 6.472em;
   }
   .footer_magnum {
     padding-left: 2.0225em;
@@ -479,17 +487,17 @@ footer a.subscribe_magnum {
 }
 @media (max-width: 47em) {
   .article_magnum {
-    padding: 0 5.3933333333333335em 5.3933333333333335em 5.3933333333333335em;
+    padding: 0 5.39333333em 5.39333333em 5.39333333em;
   }
 }
 @media (max-width: 40em) {
   .article_magnum {
-    padding: 0 3.5955555555555554em 3.5955555555555554em 3.5955555555555554em;
+    padding: 0 3.59555556em 3.59555556em 3.59555556em;
   }
 }
 @media (max-width: 35em) {
   .article_magnum {
-    padding: 0 2.3114285714285714em 2.3114285714285714em 2.3114285714285714em;
+    padding: 0 2.31142857em 2.31142857em 2.31142857em;
   }
 }
 @media (max-width: 30em) {
@@ -503,7 +511,7 @@ footer a.subscribe_magnum {
     margin: 0;
   }
   .article_magnum {
-    padding: 0 1.6179999999999999em 1.6179999999999999em 1.6179999999999999em;
+    padding: 0 1.618em 1.618em 1.618em;
   }
   h1.posttitle_magnum {
     font-size: 2.25em;

@@ -55,7 +55,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/css/style.css': ['bower_components/normalize-css/normalize.css', 'compiled_css/compiled_css.css']
+          '../assets/css/style.css': ['bower_components/normalize-css/normalize.css', 'compiled_css/compiled_css.css']
         }
       }
     },
@@ -71,4 +71,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+  grunt.registerTask('default', ['watch', 'uglify', 'less', 'cssmin']);
 };
