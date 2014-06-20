@@ -476,6 +476,9 @@ footer a.subscribe_magnum {
 .fb-comments > span > iframe[style] {
   width: 100% !important;
 }
+.prettyprint li {
+  margin-bottom: 0;
+}
 @media (max-width: 52.0625em) {
   .wrapper_magnum {
     overflow: hidden;
