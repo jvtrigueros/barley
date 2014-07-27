@@ -375,6 +375,12 @@ a.btn.icon-gplus {
 .postcontent_magnum li {
   margin-bottom: 15px;
 }
+.postcontent_magnum code {
+  margin: 0 3px;
+  padding: 0 3px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
 .article_meta_magnum {
   border-top: 1px solid #e5e5e5;
   padding-top: 1.34833333em;
