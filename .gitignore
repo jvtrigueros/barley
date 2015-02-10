@@ -16,6 +16,7 @@ results
 
 node_modules
 asset-compiler/node_modules
+asset-compiler/compiled_css
 
 npm-debug.log
 
