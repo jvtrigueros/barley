@@ -1,8 +1,6 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
@@ -15,7 +13,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: [
-        'compiled_css/*'
+          'compiled_css/*'
         ],
         tasks: ['cssmin']
       }
@@ -27,11 +25,10 @@ module.exports = function(grunt) {
       },
       combinejs: {
         files: {
-          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/js/all.min.js':
-          [
-          'bower_components/modernizr/modernizr.js',
-          'custom_components/responsive_iframes/responsive_iframes.js',
-          'custom_components/magnum.js'
+          '../assets/js/all.min.js': [
+            'bower_components/modernizr/modernizr.js',
+            'custom_components/responsive_iframes/responsive_iframes.js',
+            'custom_components/magnum.js'
           ]
         }
       }
@@ -46,8 +43,8 @@ module.exports = function(grunt) {
       options: {
         expand: true,
         paths: [
-        'bower_components/lesshat',
-        'LESS'
+          'bower_components/lesshat',
+          'LESS'
         ]
       }
     },
@@ -58,11 +55,7 @@ module.exports = function(grunt) {
           '../assets/css/style.css': ['bower_components/normalize-css/normalize.css', 'compiled_css/compiled_css.css']
         }
       }
-    },
-
-    'ghost_location': '../../Ghost/',
-    'ghost_theme_name': 'magnum',
-
+    }
   });
 
   // Load grunt plugins.
@@ -71,5 +64,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['watch', 'uglify', 'less', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'less', 'cssmin', 'watch']);
 };
