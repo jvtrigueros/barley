@@ -1,5 +1,4 @@
-$(function(){
-	$('pre').addClass('prettyprint linenums');
-	prettyPrint();
-	responsive_iframes();
+$(function () {
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
 });
