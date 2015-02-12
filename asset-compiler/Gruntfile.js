@@ -12,10 +12,12 @@ module.exports = function (grunt) {
         tasks: ['less']
       },
       css: {
-        files: [
-          'compiled_css/*'
-        ],
+        files: ['compiled_css/*'],
         tasks: ['cssmin']
+      },
+      js: {
+        files: ['custom_components/**.js'],
+        tasks: ['uglify']
       }
     },
 
