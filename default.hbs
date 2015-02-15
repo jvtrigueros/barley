@@ -47,48 +47,5 @@
       ga('create', 'UA-'+g_id, g_url);
       ga('send', 'pageview');
     </script>
-
-    <!-- Facebook API -->
-    <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128906793946521";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    <!-- Automatic facebook like, share and comment plugin -->
-    <script type="text/javascript">
-        var currentUrl = document.URL;
-        var getUrl = function(forWhat){
-            var url;
-            if(forWhat === 'page'){
-                url = document.URL;
-            }else if(forWhat === 'site'){
-                url = '{{@blog.url}}';
-            }
-            // required in order to like button to show up on localhost
-            if(url.indexOf('localhost') > -1){
-                url = 'http://google.com';
-            }
-            return url;
-        }
-
-        var getLikePlugin = function(forWhat){
-            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
-        }
-        var getCommentPlugin = function(forWhat){
-            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-numposts="10" data-colorscheme="light"></div>');
-        }
-        // like button on the footer in every page
-        //$('body > footer').prepend(getLikePlugin('site'));
-
-        //if($('body').hasClass('post-template')){
-        //    // like and comments on every post, at the end of the post
-        //    getLikePlugin('page').insertBefore($('article > #disqus_thread'))
-        //    getCommentPlugin('page').insertBefore($('article > #disqus_thread'))
-        //}
-    </script>
 </body>
 </html>
