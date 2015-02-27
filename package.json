@@ -1,0 +1,24 @@
+{
+  "name": "grain-magnum",
+  "version": "0.1.0",
+  "description": "A Ghost theme derived from GhostLook's Magnum theme.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jvtrigueros/grain-magnum.git"
+  },
+  "private": true,
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "author": "Jose V. Trigueros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvtrigueros/grain-magnum/issues"
+  },
+  "homepage": "https://github.com/jvtrigueros/grain-magnum"
+}
