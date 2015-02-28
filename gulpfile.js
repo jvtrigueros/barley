@@ -10,9 +10,7 @@ var gulp = require('gulp')
 
 var bowerComponents = './bower_components'
 
-gulp.task('default', function () {
-  gutil.log('Doing nothing yet.')
-})
+gulp.task('default', ['less', 'js', 'vendor-css', 'vendor-js'])
 
 gulp.task('less', function () {
   return compileLess()
