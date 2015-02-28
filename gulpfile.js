@@ -47,6 +47,13 @@ gulp.task('vendor-js', function () {
     .pipe(gulp.dest('assets/vendor'))
 })
 
+gulp.task('vendor-assets', function () {
+  var fontawesome = path.join(bowerComponents, 'fontawesome')
+
+  return gulp.src(path.join(fontawesome, 'fonts/*.*'), {base: fontawesome})
+    .pipe(gulp.dest('assets/vendor'))
+})
+
 gulp.task('watch', function () {
   watch('less/*.less', compileLess)
   watch('js/*.js', compileJs)
