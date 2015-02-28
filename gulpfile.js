@@ -6,12 +6,21 @@ var gulp = require('gulp')
   , less = require('gulp-less')
   , rename = require('gulp-rename')
   , uglify = require('gulp-uglify')
+  , watch = require('gulp-watch')
 
 gulp.task('default', function () {
   gutil.log('Doing nothing yet.')
 })
 
 gulp.task('less', function () {
+  return compileLess()
+})
+
+gulp.task('watch', function () {
+  watch('less/*.less', compileLess)
+})
+
+function compileLess() {
   gutil.log('Compiling less files.')
   return gulp.src('less/app.less')
     .pipe(less({
@@ -20,4 +29,4 @@ gulp.task('less', function () {
     .pipe(cssmin())
     .pipe(rename({basename: 'style'}))
     .pipe(gulp.dest('assets/css'))
-})
+}
