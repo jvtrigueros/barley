@@ -8,6 +8,8 @@ var gulp = require('gulp')
   , uglify = require('gulp-uglify')
   , watch = require('gulp-watch')
 
+var bowerComponents = './bower_components'
+
 gulp.task('default', function () {
   gutil.log('Doing nothing yet.')
 })
@@ -18,6 +20,22 @@ gulp.task('less', function () {
 
 gulp.task('js', function () {
   return compileJs()
+})
+
+gulp.task('vendor-css', function () {
+  var prettify = path.join(bowerComponents, 'google-code-prettify', 'styles', 'desert.css')
+  return gulp.src([prettify])
+    .pipe(cssmin())
+    .pipe(rename({basename: 'vendor'}))
+    .pipe(gulp.dest('assets/vendor'))
+})
+
+gulp.task('vendor-js', function () {
+  var prettify = path.join(bowerComponents, 'google-code-prettify', 'bin', '*prettify.min.js')
+  return gulp.src([prettify])
+    .pipe(uglify())
+    .pipe(rename({basename: 'vendor'}))
+    .pipe(gulp.dest('assets/vendor'))
 })
 
 gulp.task('watch', function () {
