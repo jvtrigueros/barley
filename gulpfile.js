@@ -22,12 +22,23 @@ gulp.task('js', function () {
   return compileJs()
 })
 
-gulp.task('vendor-css', function () {
+gulp.task('vendor-css', ['vendor-less'], function () {
   var prettify = path.join(bowerComponents, 'google-code-prettify', 'styles', 'desert.css')
-  return gulp.src([prettify])
+  var vendorLess = path.join('tmp', 'vendor-less.css')
+
+  return gulp.src([prettify, vendorLess])
     .pipe(cssmin())
     .pipe(rename({basename: 'vendor'}))
     .pipe(gulp.dest('assets/vendor'))
+})
+
+gulp.task('vendor-less', function () {
+  var fontawesome = path.join(bowerComponents, 'fontawesome', 'less')
+
+  return gulp.src(path.join(fontawesome, 'font-awesome.less'))
+    .pipe(less({paths: [fontawesome]}))
+    .pipe(rename({basename: 'vendor-less'}))
+    .pipe(gulp.dest('tmp'))
 })
 
 gulp.task('vendor-js', function () {
