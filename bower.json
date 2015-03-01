@@ -1,0 +1,26 @@
+{
+  "name": "grain-magnum",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jvtrigueros/grain-magnum",
+  "authors": [
+    "Jose V. Trigueros <j.v.trigueros@gmail.com>"
+  ],
+  "description": "A Ghost theme derived from GhostLook's Magnum theme.",
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "google-code-prettify": "~1.0.4",
+    "fontawesome": "~4.3.0"
+  }
+}

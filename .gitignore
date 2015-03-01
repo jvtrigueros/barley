@@ -1,4 +1,10 @@
 ########################
+# ghost
+########################
+assets
+tmp
+
+########################
 # node.js / npm
 ########################
 lib-cov
@@ -15,11 +21,13 @@ logs
 results
 
 node_modules
-asset-compiler/node_modules
-asset-compiler/compiled_css
 
 npm-debug.log
 
+########################
+# bower
+########################
+bower_components
 
 ########################
 # misc / editors
@@ -30,3 +38,4 @@ npm-debug.log
 .netbeans
 nbproject
 .idea
+
