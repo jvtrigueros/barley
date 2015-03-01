@@ -1,6 +1,7 @@
 var path = require('path')
 
 var gulp = require('gulp')
+  , concat = require('gulp-concat')
   , cssmin = require('gulp-cssmin')
   , gutil = require('gulp-util')
   , less = require('gulp-less')
@@ -10,7 +11,7 @@ var gulp = require('gulp')
 
 var bowerComponents = './bower_components'
 
-gulp.task('default', ['less', 'js', 'vendor-css', 'vendor-js'])
+gulp.task('default', ['less', 'js', 'vendor'])
 
 gulp.task('less', function () {
   return compileLess()
@@ -20,13 +21,15 @@ gulp.task('js', function () {
   return compileJs()
 })
 
+gulp.task('vendor', ['vendor-css', 'vendor-js', 'vendor-assets'])
+
 gulp.task('vendor-css', ['vendor-less'], function () {
   var prettify = path.join(bowerComponents, 'google-code-prettify', 'styles', 'desert.css')
   var vendorLess = path.join('tmp', 'vendor-less.css')
 
   return gulp.src([prettify, vendorLess])
+    .pipe(concat('vendor.css'))
     .pipe(cssmin())
-    .pipe(rename({basename: 'vendor'}))
     .pipe(gulp.dest('assets/vendor'))
 })
 
@@ -40,10 +43,10 @@ gulp.task('vendor-less', function () {
 })
 
 gulp.task('vendor-js', function () {
-  var prettify = path.join(bowerComponents, 'google-code-prettify', 'bin', '*prettify.min.js')
+  var prettify = path.join(bowerComponents, 'google-code-prettify', 'bin', 'prettify.min.js')
   return gulp.src([prettify])
+    .pipe(concat('vendor.js'))
     .pipe(uglify())
-    .pipe(rename({basename: 'vendor'}))
     .pipe(gulp.dest('assets/vendor'))
 })
 
