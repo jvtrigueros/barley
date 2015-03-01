@@ -30,6 +30,7 @@
     "gulp-util": "^3.0.4",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^4.1.1",
-    "gulp-concat": "^2.5.2"
+    "gulp-concat": "^2.5.2",
+    "gulp-clean": "^0.3.1"
   }
 }

@@ -1,6 +1,7 @@
 var path = require('path')
 
 var gulp = require('gulp')
+  , clean = require('gulp-clean')
   , concat = require('gulp-concat')
   , cssmin = require('gulp-cssmin')
   , gutil = require('gulp-util')
@@ -62,6 +63,11 @@ gulp.task('vendor-assets', function () {
 gulp.task('watch', function () {
   watch(path.join(src, 'less/*.less'), compileLess)
   watch(path.join(src, 'js/*.js'), compileJs)
+})
+
+gulp.task('clean', function () {
+  return gulp.src([dist, 'tmp', 'grain-magnum.tar.gz'], {read: false})
+    .pipe(clean())
 })
 
 function compileJs() {
