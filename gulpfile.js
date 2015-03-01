@@ -5,8 +5,10 @@ var gulp = require('gulp')
   , concat = require('gulp-concat')
   , cssmin = require('gulp-cssmin')
   , gutil = require('gulp-util')
+  , gzip = require('gulp-gzip')
   , less = require('gulp-less')
   , rename = require('gulp-rename')
+  , tar = require('gulp-tar')
   , uglify = require('gulp-uglify')
   , watch = require('gulp-watch')
 
@@ -68,6 +70,13 @@ gulp.task('watch', function () {
 gulp.task('clean', function () {
   return gulp.src([dist, 'tmp', 'grain-magnum.tar.gz'], {read: false})
     .pipe(clean())
+})
+
+gulp.task('package', ['default'], function () {
+  return gulp.src([path.join(dist, '**/*.*'), 'partials/*.*', '*.hbs'], {base: '.'})
+    .pipe(tar('grain-magnum.tar'))
+    .pipe(gzip())
+    .pipe(gulp.dest('.'))
 })
 
 function compileJs() {
