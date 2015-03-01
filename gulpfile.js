@@ -10,6 +10,8 @@ var gulp = require('gulp')
   , watch = require('gulp-watch')
 
 var bowerComponents = './bower_components'
+  , dist = './assets'
+  , src  = './src'
 
 gulp.task('default', ['less', 'js', 'vendor'])
 
@@ -30,7 +32,7 @@ gulp.task('vendor-css', ['vendor-less'], function () {
   return gulp.src([prettify, vendorLess])
     .pipe(concat('vendor.css'))
     .pipe(cssmin())
-    .pipe(gulp.dest('assets/vendor'))
+    .pipe(gulp.dest(path.join(dist, 'vendor')))
 })
 
 gulp.task('vendor-less', function () {
@@ -47,36 +49,36 @@ gulp.task('vendor-js', function () {
   return gulp.src([prettify])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/vendor'))
+    .pipe(gulp.dest(path.join(dist, 'vendor')))
 })
 
 gulp.task('vendor-assets', function () {
   var fontawesome = path.join(bowerComponents, 'fontawesome')
 
   return gulp.src(path.join(fontawesome, 'fonts/*.*'), {base: fontawesome})
-    .pipe(gulp.dest('assets/vendor'))
+    .pipe(gulp.dest(path.join(dist, 'vendor')))
 })
 
 gulp.task('watch', function () {
-  watch('less/*.less', compileLess)
-  watch('js/*.js', compileJs)
+  watch(path.join(src, 'less/*.less'), compileLess)
+  watch(path.join(src, 'js/*.js'), compileJs)
 })
 
 function compileJs() {
   gutil.log('Compiling js files.')
-  return gulp.src('js/*.js')
+  return gulp.src(path.join(src, 'js/*.js'))
     .pipe(uglify())
     .pipe(rename({basename: 'all', suffix:'.min'}))
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest(path.join(dist, 'js')))
 }
 
 function compileLess() {
   gutil.log('Compiling less files.')
-  return gulp.src('less/app.less')
+  return gulp.src(path.join(src, 'less/app.less'))
     .pipe(less({
-      paths: [path.join(__dirname, 'less')]
+      paths: [path.join(src, 'less')]
     }))
     .pipe(cssmin())
     .pipe(rename({basename: 'style'}))
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest(path.join(dist, 'css')))
 }
