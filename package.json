@@ -1,6 +1,6 @@
 {
   "name": "grain-magnum",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A Ghost theme derived from GhostLook's Magnum theme.",
   "main": "gulpfile.js",
   "scripts": {
