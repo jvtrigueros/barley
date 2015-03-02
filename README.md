@@ -1,40 +1,47 @@
-# Magnum
+# barley
+>  A Ghost theme derived from [GhostLook's Magnum](http://magnum.ghostlook.com/) theme.
 
-A  simple and responsive theme for [Ghost](http://github.com/tryghost/ghost/) and is compatible with version 0.4.*
+This theme is a fork of the Magnum theme, there were some changes made that make it a bit easier to hack on. A lot of the unused files were removed and there code was in general cleaned up a bit.
 
-#### Features:
-1) Responsive
-2) Simplistic
-3) Support for code
+This fork will probably not merge upstream.
 
-#### New Features:
-1) Integerated Google Analytics
-2) Facebook Comments
-3) Disqus
-4) Facebook likes
-Thanks to [TT TY](https://github.com/totty90) for adding these features. More information and documentation aout these features can be found in [this post](http://www.webdesignporto.com/ghost-blog-theme-with-facebook-comments-and-likes/)
+### Features
+- Out of the box support for Disqus and Google Analytics.
+- Included Attributions page.
+- Code highlighting using [Google's Code Prettify](https://code.google.com/p/google-code-prettify/).
 
+### Demo
+Here's [demo](http://blog.jvtrigueros.com/).
 
-#### Demo:
-[Magnum at GhostLook.com](http://magnum.ghostlook.com/)
+### Installation
+Download [theme](https://github.com/jvtrigueros/barley/releases/latest) and extract into in your `<Ghost directory>/content/themes`.
 
+#### Disqus
+To configure Disqus edit `barley/partials/disqus.hbs`.
 
-#### Usage:
-Theme can be downloaded from [here](https://github.com/durgesh-priyaranjan/magnum/archive/master.zip). Or it can be cloned using
+#### Google Analytics
+To configure Google Analytics edit `barley/partials/google-analytics.hbs`.
 
-    git clone https://github.com/durgesh-priyaranjan/magnum.git
-    
-Just copy the directory "magnum" and paste it inside "content/theme", and select the theme as magnum from the administrator's panel. "asset" directory contains javascript and css files in minified version.The unminified version of the stylesheet and javascript files can be found inside asset-compiler.
+### Build
+If you want to build it from source, clone the project
 
-#### Contribute:
-Go to [asset-compiler](/asset-compiler) for more info.
+    git clone https://github.com/jvtrigueros/barley.git
+    cd barley
 
-#### Licence:
-Released under MIT License. Feel free to use or abuse it.A link back to the [GhostLook.com](http://magnum.ghostlook.com/) is appreciated but not mandatory.
+Install build and frontend dependencies
 
-#### Support:
-Development will be carried and future versions of Ghost will be supported. Feel free to report an issue or enhancement request at [Issue Tracker](https://github.com/durgesh-priyaranjan/magnum/issues). 
+    npm install
 
-####Credits:
-1) [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for syntax highlighting.
-2) [Hosting Ghost on Openshift](https://github.com/Laures/ghost-openshift-quickstart) .
+Build asset pipeline
+
+    npm install -g gulp
+    gulp
+    # OR if you don't want to install gulp globally
+    ./node_modules/.bin/gulp
+
+This will minify all javascript and compile all the less files into css then minify it as well.
+
+All preprocessed assets are in `src/`, if you'll be working on these files a lot, I'd recommend running `gulp watch`. This will watch all the preprocessed assets as you change them. 
+
+### Issues and Feature Requests
+Please submit a Github issue.

@@ -15,6 +15,7 @@ var gulp = require('gulp')
 var bowerComponents = './bower_components'
   , dist = './assets'
   , src  = './src'
+  , release = 'barley'
 
 gulp.task('default', ['less', 'js', 'vendor'])
 
@@ -68,13 +69,13 @@ gulp.task('watch', function () {
 })
 
 gulp.task('clean', function () {
-  return gulp.src([dist, 'tmp', 'grain-magnum.tar.gz'], {read: false})
+  return gulp.src([dist, 'tmp', release + '.tar.gz'], {read: false})
     .pipe(clean())
 })
 
 gulp.task('package', ['default'], function () {
   return gulp.src([path.join(dist, '**/*.*'), 'partials/*.*', '*.hbs', 'package.json'], {base: '.'})
-    .pipe(tar('grain-magnum.tar'))
+    .pipe(tar(release + '.tar'))
     .pipe(gzip())
     .pipe(gulp.dest('.'))
 })
