@@ -69,7 +69,7 @@ gulp.task('watch', function () {
 })
 
 gulp.task('clean', function () {
-  return gulp.src([dist, 'tmp', release + '.tar.gz'], {read: false})
+  return gulp.src([path.join(dist, 'vendor'), path.join(dist, 'css'), path.join(dist, 'js'), 'tmp', release + '.tar.gz'], {read: false})
     .pipe(clean())
 })
 

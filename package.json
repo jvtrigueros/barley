@@ -1,5 +1,5 @@
 {
-  "name": "grain-magnum",
+  "name": "barley",
   "version": "1.0.0",
   "description": "A Ghost theme derived from GhostLook's Magnum theme.",
   "main": "gulpfile.js",
