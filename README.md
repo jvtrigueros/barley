@@ -13,6 +13,8 @@ This fork will probably not merge upstream.
 ### Demo
 Here's [demo](http://blog.jvtrigueros.com/).
 
+![barley-screenshot](barley-screenshot.png)
+
 ### Installation
 Download [theme](https://github.com/jvtrigueros/barley/releases/latest) and extract into in your `<Ghost directory>/content/themes`.
 
