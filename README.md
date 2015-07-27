@@ -60,8 +60,8 @@ Not all of the content here is my own, so I'd like to attribute people for their
 
 ### Icons
 
-- [ImgKid](http://imgkid.com/wheat-icon.shtml) - [Wheat Icon](https://s3.amazonaws.com/fl-marketing-assets/press/fl-wheat.png)
-    - Changed the colour and resized it.
+- [Cliparts.co](http://cliparts.co) - [Wheat Icon](http://cliparts.co/clipart/2598857)
+    - Changed the colour and cropped it.
 
 ### Issues and Feature Requests
 Please submit a Github issue.
