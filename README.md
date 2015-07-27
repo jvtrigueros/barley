@@ -6,9 +6,11 @@ This theme is a fork of the Magnum theme, there were some changes made that make
 This fork will probably not merge upstream.
 
 ## Features
+- Tested with Ghost 0.5.7.
 - Out of the box support for Disqus and Google Analytics.
-- Included Attributions page.
+- Custom Favicon.
 - Code highlighting using [Google's Code Prettify](https://code.google.com/p/google-code-prettify/).
+- Developer friendly, highly customizable if you can write code.
 
 ## Demo
 Here's [demo](http://blog.jvtrigueros.com/).
