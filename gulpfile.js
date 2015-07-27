@@ -42,7 +42,7 @@ gulp.task('vendor-css', ['vendor-less'], function () {
 gulp.task('vendor-less', function () {
   var fontawesome = path.join(bowerComponents, 'fontawesome', 'less')
 
-  return gulp.src(path.join('vendor-less', 'fontawesome.less'))
+  return gulp.src(path.join(src, 'vendor-less', 'fontawesome.less'))
     .pipe(less({paths: [fontawesome]}))
     .pipe(rename({basename: 'vendor-less'}))
     .pipe(gulp.dest('tmp'))
