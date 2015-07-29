@@ -1,7 +1,8 @@
-var path = require('path')
+var del = require('del')
+  , metadata = require('./package')
+  , path = require('path')
 
 var gulp = require('gulp')
-  , clean = require('gulp-clean')
   , concat = require('gulp-concat')
   , cssmin = require('gulp-cssmin')
   , gutil = require('gulp-util')
@@ -15,7 +16,6 @@ var gulp = require('gulp')
 var bowerComponents = './bower_components'
   , dist = './assets'
   , src  = './src'
-  , release = 'barley'
 
 gulp.task('default', ['less', 'js', 'vendor'])
 
@@ -68,14 +68,14 @@ gulp.task('watch', function () {
   watch(path.join(src, 'js/*.js'), compileJs)
 })
 
-gulp.task('clean', function () {
-  return gulp.src([path.join(dist, 'vendor'), path.join(dist, 'css'), path.join(dist, 'js'), 'tmp', release + '.tar.gz'], {read: false})
-    .pipe(clean())
+gulp.task('clean', function (cb) {
+  del([path.join(dist, 'vendor'), path.join(dist, 'css'), path.join(dist, 'js'), 'tmp', release + '.tar.gz'], cb)
 })
 
 gulp.task('package', ['default'], function () {
+  var packageName = metadata.name + '-' + metadata.version
   return gulp.src([path.join(dist, '**/*.*'), 'partials/*.*', '*.hbs', 'package.json'], {base: '.'})
-    .pipe(tar(release + '.tar'))
+    .pipe(tar(packageName + '.tar'))
     .pipe(gzip())
     .pipe(gulp.dest('.'))
 })
