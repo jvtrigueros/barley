@@ -1,20 +1,20 @@
 {{!< default}}
 {{> header}}
-<div class="wrapper_magnum">
-  <main class="main_magnum" role="main">
+<div class="wrapper_barley">
+  <main class="main_barley" role="main">
     {{#post}}
-      <article class="article_magnum" role="article" itemscope itemtype="http://schema.org/Article">
-        <header class="postheader_magnum">
-          <h1 class="posttitle_magnum" itemprop="headline" id="header">{{title}}</h1>
+      <article class="article_barley" role="article" itemscope itemtype="http://schema.org/Article">
+        <header class="postheader_barley">
+          <h1 class="posttitle_barley" itemprop="headline" id="header">{{title}}</h1>
         </header>
-        <div class="postcontent_magnum" itemprop="articleBody">
+        <div class="postcontent_barley" itemprop="articleBody">
           {{content}}
         </div>
-        <footer class="article_meta_magnum">
+        <footer class="article_meta_barley">
           <div class="half">
             <div>
               <span class="dimmed">Posted on </span>
-              <time class="date_magnum" datetime="{{date format="YYYY-MM-DD"}}"
+              <time class="date_barley" datetime="{{date format="YYYY-MM-DD"}}"
                     itemprop="datePublished">{{date format='MM-DD-YYYY'}}</time>
             </div>
             {{#if tags}}
@@ -25,37 +25,37 @@
             {{/if}}
           </div>
           <div class="half text-right">
-            <h6 class="share_magnum dimmed">Share this post</h6>
-            <a class="share_magnum  btn" target="_blank"
+            <h6 class="share_barley dimmed">Share this post</h6>
+            <a class="share_barley  btn" target="_blank"
                href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
-              <i class="fa fa-twitter"></i><span class="hidethis_magnum"></span>
+              <i class="fa fa-twitter"></i><span class="hidethis_barley"></span>
             </a>
-            <a class="share_magnum  btn" target="_blank"
+            <a class="share_barley  btn" target="_blank"
                href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
-              <i class="fa fa-facebook"></i><span class="hidethis_magnum"></span>
+              <i class="fa fa-facebook"></i><span class="hidethis_barley"></span>
             </a>
-            <a class="share_magnum  btn" target="_blank"
+            <a class="share_barley  btn" target="_blank"
                href="https://plus.google.com/share?url={{url absolute="true"}}">
-              <i class="fa fa-google-plus"></i><span class="hidethis_magnum"></span>
+              <i class="fa fa-google-plus"></i><span class="hidethis_barley"></span>
             </a>
           </div>
           <div class="clear"></div>
           {{#if author}}
-            <div class="postauther_magnum">
+            <div class="postauther_barley">
               <address itemscope itemtype="http://schema.org/Person">
                 {{#if author.image}}
                   <figure class="user-image">
-                    <div itemprop="image" class="authorimage_magnum"
+                    <div itemprop="image" class="authorimage_barley"
                          style="background-image: url({{author.image}});"></div>
                   </figure>
                 {{/if}}
-                <h6 class="authorname_magnum">
+                <h6 class="authorname_barley">
                   <span itemprop="name">{{author.name}}</span></h6>
                 {{#if author.website}}
-                  <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a>
+                  <div class="authorwebsite_barley"><a href="{{author.website}}" itemprop="url">{{author.website}}</a>
                   </div>
                 {{/if}}
-                <div class="authorbio_magnum">
+                <div class="authorbio_barley">
                   <p>{{author.bio}}</p>
                 </div>
                 <div class="clear"></div>
@@ -69,7 +69,7 @@
     {{/post}}
 
     {{#if pagination}}
-      <div class="pagination_magnum">
+      <div class="pagination_barley">
         {{{pagination}}}
       </div>
     {{/if}}
