@@ -1,5 +1,1 @@
-$(function () {
-  $('pre').addClass('prettyprint linenums')
-
-  prettyPrint()
-})
+hljs.initHighlightingOnLoad()
