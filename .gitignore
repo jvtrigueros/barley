@@ -1,9 +1,7 @@
 ########################
 # ghost
 ########################
-assets/css
-assets/js
-assets/vendor
+assets/
 tmp
 
 ########################

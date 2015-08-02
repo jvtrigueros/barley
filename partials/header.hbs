@@ -1,33 +1,15 @@
-{{#if @blog.cover }}
-  <div role='banner' class="header_barley" style="background-image:url('{{@blog.cover}}')">
-    {{#if @blog.logo}}
-      <a class="logo_barley" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
-    {{/if}}
-    <h1 class="blogtitle_barley">
-      <a title="{{@blog.title}}" href='{{@blog.url}}'>
-        {{{@blog.title}}}
-      </a>
-    </h1>
-    <h4 class="blogdescription_barley">
-      <a title="{{@blog.title}}" href='{{@blog.url}}' class="darker_barley">
-        {{@blog.description}}
-      </a>
-    </h4>
-  </div>
-{{ else }}
-  <div role='banner' class="header_barley">
-    {{#if @blog.logo}}
-      <a class="logo_barley" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
-    {{/if}}
-    <h1 class="blogtitle_barley">
-      <a title="{{@blog.title}}" href='{{@blog.url}}'>
-        {{{@blog.title}}}
-      </a>
-    </h1>
-    <h4 class="blogdescription_barley">
-      <a title="{{@blog.title}}" href='{{@blog.url}}'>
-        {{@blog.description}}
-      </a>
-    </h4>
-  </div>
-{{/if}}
+<div role='banner' class="header_barley" style="background-image:url('{{#if @blog.cover}}{{@blog.cover}}{{else}}{{asset "/img/the-wheat-field.jpg"}}{{/if}}')">
+  {{#if @blog.logo}}
+    <a class="logo_barley" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"/></a>
+  {{/if}}
+  <h1 class="blogtitle_barley">
+    <a title="{{@blog.title}}" href='{{@blog.url}}'>
+      {{{@blog.title}}}
+    </a>
+  </h1>
+  <h4 class="blogdescription_barley">
+    <a title="{{@blog.title}}" href='{{@blog.url}}' class="darker_barley">
+      {{@blog.description}}
+    </a>
+  </h4>
+</div>
