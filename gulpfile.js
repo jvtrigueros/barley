@@ -17,7 +17,7 @@ var bowerComponents = './bower_components'
   , dist = './assets'
   , src  = './src'
 
-gulp.task('default', ['less', 'js', 'vendor'])
+gulp.task('default', ['less', 'js', 'assets', 'vendor'])
 
 gulp.task('less', function () {
   return compileLess()
@@ -25,6 +25,13 @@ gulp.task('less', function () {
 
 gulp.task('js', function () {
   return compileJs()
+})
+
+gulp.task('assets', function () {
+  var blogCover = path.join(src, 'img', 'the-wheat-field.jpg')
+
+  return gulp.src(blogCover)
+    .pipe(gulp.dest(path.join(dist, 'img')))
 })
 
 gulp.task('vendor', ['vendor-css', 'vendor-js', 'vendor-assets'])
