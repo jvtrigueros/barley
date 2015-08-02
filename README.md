@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jvtrigueros/barley.png?label=ready&title=Ready)](https://waffle.io/jvtrigueros/barley)
 # barley
 >  A Ghost theme derived from [GhostLook's Magnum](http://magnum.ghostlook.com/) theme.
 
