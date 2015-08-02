@@ -30,10 +30,10 @@ gulp.task('js', function () {
 gulp.task('vendor', ['vendor-css', 'vendor-js', 'vendor-assets'])
 
 gulp.task('vendor-css', ['vendor-less'], function () {
-  var prettify = path.join(bowerComponents, 'google-code-prettify', 'styles', 'desert.css')
+  var highlight = path.join(bowerComponents, 'highlightjs', 'styles', 'rainbow.css')
   var vendorLess = path.join('tmp', 'vendor-less.css')
 
-  return gulp.src([prettify, vendorLess])
+  return gulp.src([highlight, vendorLess])
     .pipe(concat('vendor.css'))
     .pipe(cssmin())
     .pipe(gulp.dest(path.join(dist, 'vendor')))
@@ -49,8 +49,8 @@ gulp.task('vendor-less', function () {
 })
 
 gulp.task('vendor-js', function () {
-  var prettify = path.join(bowerComponents, 'google-code-prettify', 'bin', 'prettify.min.js')
-  return gulp.src([prettify])
+  var highlight = path.join(bowerComponents, 'highlightjs', 'highlight.pack.js')
+  return gulp.src([highlight])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(gulp.dest(path.join(dist, 'vendor')))
