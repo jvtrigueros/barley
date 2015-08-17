@@ -1,10 +1,9 @@
-//**
-// Mixins
-//**
 @import "variables";
 @import "layout";
 
-html {font-size: 1em;}
+html {
+  font-size: 1em;
+}
 
 //**
 // Styles
@@ -36,13 +35,21 @@ h1 {
   font-size: pow(@scale, 4);
 }
 
-h2 {font-size: pow(@scale, 3);}
+h2 {
+  font-size: pow(@scale, 3);
+}
 
-h3 {font-size: pow(@scale, 2);}
+h3 {
+  font-size: pow(@scale, 2);
+}
 
-h4 {font-size: pow(@scale, 1);}
+h4 {
+  font-size: pow(@scale, 1);
+}
 
-small, .font_small {font-size: pow(@scale, -1);}
+small, .font_small {
+  font-size: pow(@scale, -1);
+}
 
 .dimmed {
   color: lighten(@color_05, 50%);
