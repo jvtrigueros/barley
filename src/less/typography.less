@@ -4,22 +4,21 @@
 @import "variables";
 @import "layout";
 
-.HeaderFont () {
-  font-family: @header_font;
-  line-height: 1.313em;
-  font-weight: 400;
-}
+html {font-size: 1em;}
 
 //**
 // Styles
 //**
 body {
   .BodyColor;
-  margin: 0;
-  font-family: @default_font;
+  font-family: @defaultFont;
+  font-weight: 400;
+  line-height: 1.45;
+  /*margin: 0;
   line-height: @golden + 0em;
   font-weight: 300;
-  word-wrap: break-word;
+  word-wrap: break-word;*/
+
 }
 
 a {
@@ -39,43 +38,25 @@ a:active, a:hover {
   outline: 0;
 }
 
-// Classic typographic scale: if default 16px total size scale would be:
-// 9px, 10px, 11px, 12px, 16px, 18px, 21px, 24px, 36px, 48px, 60px, 72px
+h1, h2, h3, h4 {
+  margin: @scale 0 0 0.5em;
+  font-family: @defaultFont;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
 h1 {
-  .HeaderFont;
-  font-size: 2.5em;
-  margin: 0.563em 0 ((0.563/3)+ 0em);
+  margin-top: 0;
+  font-size: pow(@scale, 4);
 }
 
-h2 {
-  .HeaderFont;
-  font-size: 2.25em;
-  margin: 0.625em 0 ((0.625/3)+ 0em);
-}
+h2 {font-size: pow(@scale, 3);}
 
-h3 {
-  .HeaderFont;
-  font-size: 1.5em;
-  margin: 1.313em 0 ((1.313/3)+ 0em);
-}
+h3 {font-size: pow(@scale, 2);}
 
-h4 {
-  .HeaderFont;
-  font-size: 1.313em;
-  margin: 1.313em 0 ((1.313/3)+ 0em);
-}
+h4 {font-size: pow(@scale, 1);}
 
-h5 {
-  .HeaderFont;
-  font-size: 1.125em;
-  margin: 1.313em 0 ((1.313/3)+ 0em);
-}
-
-h6 {
-  .HeaderFont;
-  font-size: 1em;
-  margin: 0.75em 0 ((0.75/3)+ 0em);
-}
+small, .font_small {font-size: pow(@scale, -1);}
 
 p, ul {
   margin: 0.4rem 0;
@@ -85,8 +66,14 @@ p, ul {
   color: lighten(@color_05, 50%);
 }
 
-h1.posttitle_barley {
-  .PostTitleColor;
+h1.post-title_barley {
+  //.PostTitleColor;
+  //background-color: transparent;
+  border-bottom: .1em solid @color_03;
+  color: @color_03;
+  a, a:link, a:visited {
+    color: @color_03;
+  }
 }
 
 .header_barley {
@@ -113,15 +100,4 @@ h4.blogdescription_barley, h4.blogdescription_barley a {
   text-decoration: none;
   color: @color_05;
   margin-bottom: 0;
-}
-
-h1.posttitle_barley {
-  .mt0;
-  background-color: transparent;
-  border-bottom: (@golden /  40) + 0em solid @color_03;
-  color: @color_03;
-  font-weight: 300;
-  a, a:link, a:visited {
-    color: @color_03;
-  }
 }
