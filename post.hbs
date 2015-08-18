@@ -38,11 +38,11 @@
           </div>
           <div class="clear"></div>
           {{#if author}}
-            <div class="postauthor_barley">
+            <div class="post-author_barley">
               <address itemscope itemtype="http://schema.org/Person">
                 {{#if author.image}}
                   <figure class="user-image">
-                    <div itemprop="image" class="authorimage_barley"
+                    <div itemprop="image" class="author-image_barley"
                          style="background-image: url({{author.image}});"></div>
                   </figure>
                 {{/if}}
@@ -50,10 +50,9 @@
                   <span itemprop="name">{{author.name}}</span>
                 </h4>
                 {{#if author.website}}
-                  <div class="authorwebsite_barley"><a href="{{author.website}}" itemprop="url">{{author.website}}</a>
-                  </div>
+                  <a href="{{author.website}}" itemprop="url">{{author.website}}</a>
                 {{/if}}
-                <div class="authorbio_barley">
+                <div class="author-bio_barley">
                   <p>{{author.bio}}</p>
                 </div>
                 <div class="clear"></div>
