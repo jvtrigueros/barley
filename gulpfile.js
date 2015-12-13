@@ -20,11 +20,22 @@ var bowerComponents = './bower_components'
 gulp.task('default', ['less', 'js', 'assets', 'vendor'])
 
 gulp.task('less', function () {
-  return compileLess()
+  gutil.log('Compiling less files.')
+  return gulp.src(path.join(src, 'less/app.less'))
+    .pipe(less({
+      paths: [path.join(src, 'less')]
+    }))
+    .pipe(cssmin())
+    .pipe(rename({basename: 'style'}))
+    .pipe(gulp.dest(path.join(dist, 'css')))
 })
 
 gulp.task('js', function () {
-  return compileJs()
+  gutil.log('Compiling js files.')
+  return gulp.src(path.join(src, 'js/*.js'))
+    .pipe(uglify())
+    .pipe(rename({basename: 'all', suffix:'.min'}))
+    .pipe(gulp.dest(path.join(dist, 'js')))
 })
 
 gulp.task('assets', function () {
@@ -86,22 +97,3 @@ gulp.task('package', ['default'], function () {
     .pipe(gzip())
     .pipe(gulp.dest('.'))
 })
-
-function compileJs() {
-  gutil.log('Compiling js files.')
-  return gulp.src(path.join(src, 'js/*.js'))
-    .pipe(uglify())
-    .pipe(rename({basename: 'all', suffix:'.min'}))
-    .pipe(gulp.dest(path.join(dist, 'js')))
-}
-
-function compileLess() {
-  gutil.log('Compiling less files.')
-  return gulp.src(path.join(src, 'less/app.less'))
-    .pipe(less({
-      paths: [path.join(src, 'less')]
-    }))
-    .pipe(cssmin())
-    .pipe(rename({basename: 'style'}))
-    .pipe(gulp.dest(path.join(dist, 'css')))
-}
