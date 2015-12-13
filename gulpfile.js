@@ -7,6 +7,7 @@ var gulp = require('gulp')
   , cssmin = require('gulp-cssmin')
   , gutil = require('gulp-util')
   , gzip = require('gulp-gzip')
+  , handlebars = require('gulp-compile-handlebars')
   , less = require('gulp-less')
   , rename = require('gulp-rename')
   , tar = require('gulp-tar')
@@ -36,6 +37,10 @@ gulp.task('js', function () {
     .pipe(uglify())
     .pipe(rename({basename: 'all', suffix:'.min'}))
     .pipe(gulp.dest(path.join(dist, 'js')))
+})
+
+gulp.task('hbs', function () {
+
 })
 
 gulp.task('assets', function () {
