@@ -1,6 +1,7 @@
 var del = require('del')
   , metadata = require('./package')
   , path = require('path')
+  , nconf = require('nconf')
 
 var gulp = require('gulp')
   , concat = require('gulp-concat')
@@ -17,6 +18,8 @@ var gulp = require('gulp')
 var bowerComponents = './bower_components'
   , dist = './assets'
   , src  = './src'
+
+nconf.file('./config.json')
 
 gulp.task('default', ['less', 'js', 'assets', 'vendor'])
 
@@ -40,7 +43,11 @@ gulp.task('js', function () {
 })
 
 gulp.task('hbs', function () {
+  var context = nconf.get()
 
+  return gulp.src(path.join(src, 'hbs/*.hbs'))
+    .pipe(handlebars(context))
+    .pipe(gulp.dest('./partials'))
 })
 
 gulp.task('assets', function () {
