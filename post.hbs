@@ -1,13 +1,13 @@
 {{!< default}}
 {{> header}}
 <div class="wrapper_barley">
-  <main class="main_barley" role="main">
+  <main role="main">
     {{#post}}
       <article class="article_barley" role="article" itemscope itemtype="http://schema.org/Article">
-        <header class="postheader_barley">
-          <h1 class="posttitle_barley" itemprop="headline" id="header">{{title}}</h1>
+        <header>
+          <h1 class="post-title_barley" itemprop="headline" id="header">{{title}}</h1>
         </header>
-        <div class="postcontent_barley" itemprop="articleBody">
+        <div class="post-content_barley" itemprop="articleBody">
           {{content}}
         </div>
         <footer class="article_meta_barley">
@@ -25,37 +25,34 @@
             {{/if}}
           </div>
           <div class="half text-right">
-            <h6 class="share_barley dimmed">Share this post</h6>
-            <a class="share_barley  btn" target="_blank"
-               href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
-              <i class="fa fa-twitter"></i><span class="hidethis_barley"></span>
+            <div class="share_barley font_small">Share this post</div>
+            <a class="btn" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
+              <i class="fa fa-twitter"></i>
             </a>
-            <a class="share_barley  btn" target="_blank"
-               href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
-              <i class="fa fa-facebook"></i><span class="hidethis_barley"></span>
+            <a class="btn" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
+              <i class="fa fa-facebook"></i>
             </a>
-            <a class="share_barley  btn" target="_blank"
-               href="https://plus.google.com/share?url={{url absolute="true"}}">
-              <i class="fa fa-google-plus"></i><span class="hidethis_barley"></span>
+            <a class="btn" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">
+              <i class="fa fa-google-plus"></i>
             </a>
           </div>
           <div class="clear"></div>
           {{#if author}}
-            <div class="postauther_barley">
+            <div class="post-author_barley">
               <address itemscope itemtype="http://schema.org/Person">
                 {{#if author.image}}
-                  <figure class="user-image">
-                    <div itemprop="image" class="authorimage_barley"
+                  <figure>
+                    <div itemprop="image" class="author-image_barley"
                          style="background-image: url({{author.image}});"></div>
                   </figure>
                 {{/if}}
-                <h6 class="authorname_barley">
-                  <span itemprop="name">{{author.name}}</span></h6>
+                <h4>
+                  <span itemprop="name">{{author.name}}</span>
+                </h4>
                 {{#if author.website}}
-                  <div class="authorwebsite_barley"><a href="{{author.website}}" itemprop="url">{{author.website}}</a>
-                  </div>
+                  <a href="{{author.website}}" itemprop="url">{{author.website}}</a>
                 {{/if}}
-                <div class="authorbio_barley">
+                <div class="author-bio_barley">
                   <p>{{author.bio}}</p>
                 </div>
                 <div class="clear"></div>

@@ -2,8 +2,7 @@
 // Styles
 //**
 @import "variables";
-@import "color-and-bgs";
-@import "mixins";
+@import "color-mixins";
 
 blockquote {
   border-left: 4px solid @color_03;
@@ -78,7 +77,7 @@ input[type="text"] {
 }
 
 .article_barley {
-  .ArticleColor;
+  background: white;
   padding: ((@add_padding/3) + 0em) (@add_padding + 0em);
   margin-bottom: (@add_padding  / 4) + 0em;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -116,24 +115,9 @@ input[type="text"] {
   transition: color 0.15s ease-in, background 0.15s ease-in;
 }
 
-a.btn.icon-twitter {
-  background-color: #32CCFE;
-}
-
-a.btn.icon-facebook {
-  background-color: #3B5999;
-}
-
-a.btn.icon-gplus {
-  background-color: #D44837;
-}
-
-.postcontent_barley {
+.post-content_barley {
   p {
-    margin: .8rem 0;
-  }
-  li {
-    margin-bottom: 15px;
+    margin-bottom: 1.3em;
   }
 }
 
@@ -168,14 +152,12 @@ a.btn.icon-gplus {
 }
 
 .footer_barley {
-  .header_barley;
-  margin-bottom: 0;
-  border-top: 0 solid transparent;
-  border-bottom: ((@add_padding / 14) + 0em) solid @color_03;
+  text-align: center;
+  padding-bottom: @scale;
+  border-bottom: @scale/2 solid @color_03;
 }
 
 footer a.subscribe_barley {
-  .mB;
   display: inline-block;
 }
 
@@ -183,13 +165,12 @@ footer a.subscribe_barley {
   margin: 0 0 1em;
 }
 
-.postauther_barley {
-  padding-top: @add_padding/6 + 0em;
-  margin-top: @add_padding/3 + 0em;
+.post-author_barley {
+  margin-top: 2*@scale;
   border-top: 1px solid @color_01;
 }
 
-.authorimage_barley {
+.author-image_barley {
   width: 100px;
   height: 100px;
   background-size: cover;
@@ -199,15 +180,6 @@ footer a.subscribe_barley {
   margin-right: 1em;
 }
 
-.authorbio_barley p {
+.author-bio_barley p {
   line-height: 1.1rem;
-}
-
-.footertext_barley {
-  font-size: (@golden / 2) + 0em;
-}
-
-// Facebook comments should be 100% because can break the layout on mobile.
-.fb-comments, .fb-comments > span, .fb-comments > span > iframe[style] {
-  width: 100% !important;
 }

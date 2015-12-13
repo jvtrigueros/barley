@@ -71,8 +71,8 @@ gulp.task('vendor-assets', function () {
 })
 
 gulp.task('watch', function () {
-  watch(path.join(src, 'less/*.less'), compileLess)
-  watch(path.join(src, 'js/*.js'), compileJs)
+  gulp.watch(path.join(src, 'less/*.less'), ['less'])
+  //watch(path.join(src, 'js/*.js'), compileJs)
 })
 
 gulp.task('clean', function (cb) {
