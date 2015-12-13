@@ -1,12 +1,8 @@
-########################
 # ghost
-########################
 assets/
 tmp
 
-########################
 # node.js / npm
-########################
 lib-cov
 *.seed
 *.log
@@ -20,22 +16,15 @@ pids
 logs
 results
 
-node_modules
+node_modules/
 
 npm-debug.log
 
-########################
 # bower
-########################
-bower_components
+bower_components/
 
-########################
-# misc / editors
-########################
-*~
-*#
-.DS_STORE
-.netbeans
-nbproject
 .idea
 
+config.json
+partials/disqus.hbs
+partials/google-analytics.hbs
