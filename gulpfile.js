@@ -18,10 +18,11 @@ var gulp = require('gulp')
 var bowerComponents = './bower_components'
   , dist = './assets'
   , src  = './src'
+  , packageName = metadata.name + '-' + metadata.version
 
 nconf.file('./config.json')
 
-gulp.task('default', ['less', 'js', 'assets', 'vendor'])
+gulp.task('default', ['less', 'js', 'hbs', 'assets', 'vendor'])
 
 gulp.task('less', function () {
   gutil.log('Compiling less files.')
@@ -99,11 +100,19 @@ gulp.task('watch', function () {
 })
 
 gulp.task('clean', function (cb) {
-  del([path.join(dist, 'vendor'), path.join(dist, 'css'), path.join(dist, 'js'), 'tmp', release + '.tar.gz'], cb)
+  del( [ path.join(dist, 'vendor')
+       , path.join(dist, 'css')
+       , path.join(dist, 'js')
+       , path.join('./partials/{disqus,google-analytics}.hbs')
+       , 'tmp'
+       , packageName + '.tar.gz'
+       ]
+     , cb
+     )
 })
 
 gulp.task('package', ['default'], function () {
-  var packageName = metadata.name + '-' + metadata.version
+
   return gulp.src([path.join(dist, '**/*.*'), 'partials/*.*', '*.hbs', 'package.json'], {base: '.'})
     .pipe(tar(packageName + '.tar'))
     .pipe(gzip())
