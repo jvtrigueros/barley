@@ -4,7 +4,7 @@
   "description": "A Ghost theme derived from GhostLook's Magnum theme.",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "bower install --config.analytics=true",
+    "postinstall": "bower install --config.analytics=true --allow-root",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
